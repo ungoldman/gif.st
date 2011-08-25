@@ -37,7 +37,7 @@ class Controller < Sinatra::Base
   end
   
   get '/request/?' do
-    @request_token = @consumer.get_request_token(:oauth_callback => 'http://#{request.host}/auth')
+    @request_token = @consumer.get_request_token(:oauth_callback => 'http://gif.herokuapp.com/auth')
     session[:oauth][:request_token] = @request_token.token
     session[:oauth][:request_token_secret] = @request_token.secret
     redirect @request_token.authorize_url
