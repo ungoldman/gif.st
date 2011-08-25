@@ -3,7 +3,9 @@ gif.st - Social Web App meets Gifs
 _because why not_
 ---------------
 
-Pre-Alpha Extreme Edition will attempt to use Kyle Drake's [Sammy Davis Junior](https://github.com/kyledrake/sammy_davis_jr) boilerplate and the [sinatra-twitter-oauth gem](http://rubygems.org/gems/sinatra-twitter-oauth) for some basic login and authentication functionality.
+Pre-Alpha Extreme Edition is using @kyledrake's [Sammy Davis Junior](https://github.com/kyledrake/sammy_davis_jr) as a boilerplate. After experiencing some false starts when attempting to use the sinatra-twitter-oauth gem and not getting much farther with the plain twitter-oauth gem, I opted to borrow heavily from @mirven's [twitter oauth sinatra demo](https://github.com/mirven/twitter-oauth-sinatra) which uses the oauth and grackle gems for some basic login, authentication and status grabbing functionality.
+
+Note that this app is deployed on Heroku's cedar stack for maximum instability and experimentation.
 
 	sammy_davis_jr documentation attached below.
 
