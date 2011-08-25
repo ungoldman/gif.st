@@ -1,4 +1,5 @@
 source :rubygems
+gem 'pg',                  '0.10.0'
 gem 'dm-core',             '1.1.0'
 gem 'dm-validations',      '1.1.0'
 gem 'dm-aggregates',       '1.1.0'

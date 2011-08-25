@@ -4,3 +4,10 @@ ng_dev:
   username: ng
   password:
   database: gif_st
+
+production:
+  adapter: postgres
+  host: localhost
+  username:
+  password:
+  database:
