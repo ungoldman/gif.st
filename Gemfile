@@ -14,10 +14,13 @@ gem 'sinatra-synchrony',   '0.0.3',  :require => 'sinatra/synchrony'
 gem 'sinatra-flash',       '0.3.0',  :require => 'sinatra/flash'
 gem 'thin',                '1.2.11'
 gem 'rake',                '0.9.2',  :require => nil
+gem 'oauth',               '0.4.5', :require => 'oauth/consumer'
+gem 'grackle',             '0.1.10'
 
 group :development do
   gem 'shotgun',      :require => nil
   gem 'ruby-debug19', :require => 'ruby-debug'
+	gem 'rspec',				'2.6.0'
 end
 
 group :test do
