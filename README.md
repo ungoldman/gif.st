@@ -8,14 +8,18 @@ Pre-Alpha Extreme Edition is using @kyledrake's [Sammy Davis Junior](https://git
 Note that this app is deployed on Heroku's cedar stack for maximum instability and experimentation.
 
 Next steps:
-1) persistent users
-2) connect to amazon rds
-3) crud for gifs
-4) use [twitter's bootstrap](http://twitter.github.com/bootstrap/) for ui
-5) implement free piggyback ssl via heroku
-6) do some other cool stuff
 
-	sammy_davis_jr documentation attached below.
+* 1) persistent users
+* 2) connect to amazon rds
+* 3) crud for gifs
+* 4) use [twitter's bootstrap](http://twitter.github.com/bootstrap/) for ui
+* 5) implement free piggyback ssl via heroku
+* 6) do some other cool stuff
+
+
+sammy_davis_jr documentation attached below
+---
+
 
 Sammy Davis Junior - Asynchronous edition with EventMachine and Thin
 --------------------------------------------------------------------
