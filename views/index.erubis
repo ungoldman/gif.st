@@ -1,5 +1,5 @@
 <h1>gif.st | alpha</h1>
-<img src="/img/pool.jpg"/>
+<h2><a href="/logout">logout</a></h2>
 <ul>
 <% @statuses.each do |status| %>
 	<li><%= status.text %></li>

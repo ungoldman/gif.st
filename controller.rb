@@ -32,7 +32,7 @@ class Controller < Sinatra::Base
       @statuses = @client.statuses.friends_timeline? :count => 100
       erubis :index
     else
-      '<a href="/login">Sign On</a>'
+      '<a href="/login"><img src="/img/twitter-sign-in.png"/></a>'
     end
   end
   
