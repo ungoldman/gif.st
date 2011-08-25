@@ -15,21 +15,21 @@ class Controller < Sinatra::Base
   set :method_override, true
   set :public,          'public'
   set :sessions,        true
-  set :session_secret,  'PUT SOMETHING HERE'
+  set :session_secret,  'theoreticalparticlephysicist'
   set :erubis,          :escape_html => true
 
   configure :development do
     Bundler.require :development
     DataMapper::Logger.new STDOUT, :debug
-    DataMapper.setup :default, 'postgres://user:pass@localhost/database_dev'
+    DataMapper.setup :default, YAML.load_file(File.join(root, 'config', 'database.yml'))[environment.to_s]
   end
 
   configure :test do
-    DataMapper.setup :default, 'postgres://user:pass@localhost/database_test'
+    DataMapper.setup :default, YAML.load_file(File.join(root, 'config', 'database.yml'))[environment.to_s]
   end
 
   configure :production do
-    DataMapper.setup :default, 'postgres://user:pass@localhost/database'
+    DataMapper.setup :default, ENV['DATABASE_URL']
   end
 end
 

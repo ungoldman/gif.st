@@ -1,0 +1,6 @@
+ng_dev:
+  adapter: postgres
+  host: localhost
+  username: ng
+  password:
+  database: gif_st
