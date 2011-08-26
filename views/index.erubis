@@ -1,7 +1,25 @@
-<h1>gif.st | alpha</h1>
-<h2><a href="/logout">logout</a></h2>
-<ul>
-<% @statuses.each do |status| %>
-	<li><%= status.text %></li>
-<% end %>
-</ul>
+<div class="sidebar" id="index">
+  <ul>
+    <li><a href="#">main ></a></li>
+  </ul>
+</div>
+<div class="content">
+  
+  <ul class="tweet-list">
+    <% @tweets.each do |tweet| %>
+      <li class="tweet">
+        <a href="http://twitter.com/<%= tweet.user.screen_name %>">
+          <img src="<%= tweet.user.profile_image_url %>" />
+        </a>
+        <div class="tweet-content">
+          <p class="user">
+            <a href="http://twitter.com/<%= tweet.user.screen_name %>"><%= tweet.user.screen_name %></a>
+          </p>
+          <p class="text"><%= tweet.text %></p>
+          <p class="timestamp"><a>timestamp</a></p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  
+</div>

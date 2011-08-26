@@ -1,6 +1,10 @@
 class Sinatra::Base
   helpers do
     def h(text); Rack::Utils.escape_html text end
+    
+    def partial(name, options={})
+      erubis("partials/_#{name.to_s}".to_sym, options.merge(:layout => false))
+    end
 
     def onclick_delete(msg='Are you sure?')
       %{ if (confirm('#{msg}')) {

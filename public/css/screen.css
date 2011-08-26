@@ -1,1 +1,107 @@
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+div#main.container-fluid {
+	margin-top: 40px;
+	padding-top: 15px;
+}
+
+div#index.sidebar {
+	background-color: #049cd9;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#004D9F), to(#049cd9));
+	background-image: -webkit-linear-gradient(#004D9F, #049cd9);
+	background-image: -moz-linear-gradient(#004D9F, #049cd9);
+	background-image: -o-linear-gradient(top, #004D9F, #049cd9);
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#004D9F), to(#049cd9));
+	background-repeat: no-repeat;
+	border-radius: 5px;
+	-o-border-radius: 5px;
+	-moz-border-radius: 5px;
+	webkit-border-radius: 5px;
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#004D9F', EndColorStr='#049cd9', GradientType=0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#004D9F', EndColorStr='#049cd9', GradientType=0))";
+	padding-top: 5px;
+}
+div#index.sidebar ul li a {
+	color: white;
+	text-decoration: none;
+}
+div#index.sidebar ul li a:hover {
+	color: #cef;
+}
+
+ul.tweet-list {
+	list-style: none;
+}
+
+.tweet {
+	background: #fff;
+	border-bottom: 1px solid #ebebeb;
+	/*clear: both;*/
+	color: #444;
+	cursor: pointer;
+	font-size: 15px;
+	line-height: 15px;
+	min-height: 60px;
+	padding: 10px 20px;
+	position: relative;
+}
+	.tweet:hover {
+		background: #ffeae5;
+		border-color: #ffcec3;
+	}
+		.tweet:hover .user a,
+		.tweet:hover .user a:visited {
+			color: #ff3300;
+		}
+		.tweet:hover .timestamp {
+			color: #ff3300;
+		}
+	.tweet a,
+	.tweet a:visited {
+		color: #ff3300;
+		text-decoration: none;
+	}
+	.tweet a:hover {
+		text-decoration: underline;
+	}
+	.tweet img {
+		float: left;
+		height: 48px;
+		margin-top: 3px;
+		overflow: hidden;
+		width: 48px;
+	}
+	.tweet .tweet-content {
+		margin-left: 58px;
+		min-height: 48px;
+	}
+	.tweet .user {
+		color: #333;
+		font-weight: bold;
+	}
+		.tweet .user a,
+		.tweet .user a:visited {
+			color: #444;
+		}
+	.tweet .text {
+		line-height: 19px;
+	}
+	.tweet .timestamp,
+	.tweet .timestamp a,
+	.tweet .timestamp a:visited {
+		color: #999;
+		font-size: 11px;
+		margin-top: 1px;
+	}
+		.tweet:hover .timestamp a,
+		.tweet:hover .timestamp a:visited {
+			color: #ff3300;
+			text-decoration: none;
+		}
+		.tweet:hover .timestamp a:hover {
+			color: #ff3300;
+			text-decoration: underline;
+		}
+.tweet-selected,
+.tweet-selected:hover {
+	background: #ffcec3;
+	border-color: #ddaea3;
+}

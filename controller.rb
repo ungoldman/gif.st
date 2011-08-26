@@ -3,6 +3,9 @@ class Controller < Sinatra::Base
   before do
     session[:oauth] ||= {}
     
+    @host = request.host
+    @host << ":9292" if request.host == "localhost" # set to dev port if local
+    
     consumer_key = ENV['consumer_key']
     consumer_secret = ENV['consumer_secret']
     
@@ -29,7 +32,7 @@ class Controller < Sinatra::Base
   
   get '/?' do
     if @access_token
-      @statuses = @client.statuses.friends_timeline? :count => 100
+      @tweets = @client.statuses.friends_timeline? :count => 100
       erubis :index
     else
       '<a href="/login"><img src="/img/twitter-sign-in.png"/></a>'
@@ -37,7 +40,7 @@ class Controller < Sinatra::Base
   end
   
   get '/login/?' do
-    @request_token = @consumer.get_request_token(:oauth_callback => 'http://gif.herokuapp.com/auth')
+    @request_token = @consumer.get_request_token(:oauth_callback => "http://#{@host}/auth")
     session[:oauth][:request_token] = @request_token.token
     session[:oauth][:request_token_secret] = @request_token.secret
     redirect @request_token.authorize_url
