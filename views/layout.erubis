@@ -27,13 +27,15 @@
     <link rel="stylesheet" type="text/css" href="/css/screen.css" />
   </head>
   <body>
-    <div class="container-fluid" id="main">
+    <div class="container" id="main">
       <div class="topbar">
         <div class="fill">
           <div class="container">
             <h3><a href="/">gif.st | alpha</a></h3>
             <ul>
-              <li class=""><a href="/logout">Logout</a></li>
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Settings</a></li>
+              <li><a href="/logout">Logout</a></li>
             </ul>
           </div>
         </div>
