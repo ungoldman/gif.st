@@ -3,6 +3,19 @@
 	padding-top: 15px;
 }
 
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#leftbar {
+	text-align: right;
+}
+#rightbar {
+	
+}
+
 div#index.sidebar {
 	background-color: #049cd9;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#004D9F), to(#049cd9));

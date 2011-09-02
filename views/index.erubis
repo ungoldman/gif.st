@@ -1,20 +1,22 @@
 <div class="row">
-  <div class="span3 columns" id="index">
+  <div class="span2 columns" id="leftbar">
     <ul>
-      <li><a href="#">stream</a></li>
-      <li><a href="#">collection</a></li>
+      <li><a href="#">random &gt;</a></li>
+      <li><a href="#">stream &gt;</a></li>
+      <li><a href="#">collection &gt;</a></li>
     </ul>
   </div>
   
-  <div class="span10 columns">
-    <img src="/img/comp.jpg" width="560" />
+  <div class="span11 columns">
+    <img src="/img/comp.jpg" width="640" />
     <p><a href="#">+</a> | <a href="#">-</a> | <a href="#">♥</a> | submitted by @<a href="#">thisguy</a></p>
   </div>
   
-  <div class="span3 columns">
-    <li><a href="#">random!</a></li>
-    <li><a href="#">today's top gifs</a></li>
-    <li><a href="#">all-time most liked</a></li>
-    <li><a href="#">all-time most hated</a></li>
+  <div class="span3 columns" id="rightbar">
+    <ul>
+      <li><a href="#">&lt; today's top gifs</a></li>
+      <li><a href="#">&lt; all-time most liked</a></li>
+      <li><a href="#">&lt; all-time most hated</a></li>
+    </ul>
   </div>
 </div>
