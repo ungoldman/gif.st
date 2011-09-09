@@ -10,8 +10,8 @@ a:active {
 
 html {
   height: 100%;
-}
-html {
+
+  background: #222;
   background: -webkit-linear-gradient(#333 0%, #111 100%) fixed;
   background: -moz-linear-gradient(#333 0%, #111 100%) fixed;
   background: linear-gradient(#333 0%, #111 100%) fixed;
