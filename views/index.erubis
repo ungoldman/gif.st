@@ -1,4 +1,6 @@
 <div id="gif-sandbox">
+  
+  <!--
   <div class="sidebar">
     <ul class="gif-nav">
       <li><a class="btn large primary"  href="#">next</a></li>
@@ -7,22 +9,33 @@
     <ul>
       <li><a class="btn large info"     href="#">copy url</a></li>
     </ul>
-    <ul class="gif-info">
-      <li>
-        <a class="btn" href="#">+</a>
-      </li>
-      <li>
-        <a class="btn" href="#">-</a>
-      </li>
-      <li>
-        <a class="btn" href="#">♥</a>
-      </li>
-    </ul>
   </div>
+  -->
   
   <div class="content">
     <img class="gif-current" src="/img/comp.jpg" />
-    <div class="gif-identity">uploader: @<a href="#">thisguy</a>
+    <div class="gif-info">
+      <div class="container">
+        <ul class="left">
+          <li><a class="btn primary prev disabled" href="#">prev</a></li>
+          <li><a class="btn primary next"  href="#">next</a></li>
+          <li><a class="btn info"     href="#">copy url</a></li>
+      
+          <li class="gif-uploader">
+            uploader: @<a href="#">thisguy</a>
+          </li>
+      
+          <li>
+            <a class="btn plus"       href="#">+</a>
+          </li>
+          <li>
+            <a class="btn minus"      href="#">-</a>
+          </li>
+          <li>
+            <a class="btn favorite"   href="#">♥</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

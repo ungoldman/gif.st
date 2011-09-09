@@ -31,14 +31,18 @@
       
       <div class="topbar">
         <div class="fill">
-          <div class="container-fluid">
+          <div class="container">
             <h3><a href="/">gif.st</a></h3>
-            <ul>
+            <ul class="nav">
               <li class="active"><a href="#">random</a></li>
               <li><a href="#">profile</a></li>
               <li><a href="#">friends</a></li>
             </ul>
+            <form action="">
+              <input type="text" placeholder="Search">
+            </form>
             <ul class="nav secondary-nav">
+              <li><a class="btn plus"     href="#">upload a gif</a></li>
               <li><a href="/logout">logout</a></li>
             </ul>
             <!--

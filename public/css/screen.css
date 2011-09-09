@@ -1,4 +1,4 @@
-html, body, #main, .content, #gif-sandbox, .sidebar {
+html {
   height: 100%;
 }
 html {
@@ -40,6 +40,24 @@ ul {
     width: 90px;
     text-align: center;
   }
+  .topbar ul li a.btn {
+    padding: 4px 14px;
+    color: #333;
+    margin: 5px 10px 0 0;
+  }
+  .topbar ul li a.btn:hover,
+  .topbar ul li a.btn:focus,
+  .topbar ul li a.btn:active {
+    background-color: #97D397;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#dff1df), to(#97d397));
+    background-image: -moz-linear-gradient(#dff1df, #97d397);
+    background-image: -ms-linear-gradient(#dff1df, #97d397);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dff1df), color-stop(100%, #97d397));
+    background-image: -webkit-linear-gradient(#dff1df, #97d397);
+    background-image: -o-linear-gradient(#dff1df, #97d397);
+    background-image: linear-gradient(#dff1df, #97d397);
+  }
   
 div.container-fluid div.sidebar {
   background: #777;
@@ -53,7 +71,8 @@ div.container-fluid div.sidebar {
 }
 
 div.container-fluid div.content {
-  margin-left: 101px;
+  max-width: none;
+  margin-left: 0;
 }
 
 .sidebar .btn.large {
@@ -82,47 +101,66 @@ div.container-fluid div.content {
   }
   .gif-current {
     display: block;
-    padding-bottom: 31px;
+    margin: 0 auto;
+    padding: 44px 0 9px;
   }
-  .gif-identity {
-    background: #333;
+  .gif-info {
+    background: #555;
     border-color: #444;
-    border-radius: 15px 0 0 0;
+    border-radius: 0;
     border-style: solid;
-    border-width: 1px 0 0 1px;
-    bottom: 0;
-    color: #ddd;
+    border-width: 0 0 1px;
+    top: 40px;
     display: block;
-    padding: 2px 12px 3px 8px;
+    padding: 8px 12px 7px 8px;
     position: fixed;
     right: 0;
+    left: 0;
   }
-    .gif-identity a {
-      color: #f93;
-    }
-
-.gif-nav .btn.large {
-  border-width: 0 1px 1px;
-}
-  .gif-nav .btn.large.primary {
-      border-width: 1px;
-  }
-  
-.gif-info {
-  padding: 7px 6px 7px 0;
-  font: monospace;
-}
   .gif-info li {
-    margin-bottom: 4px;
-    text-align: right;
+    color: #eee;
+    float: left;
   }
-    .gif-info li a {
+    .gif-info li a.btn {
+      margin-left: 6px;
       text-align: center;
-      width: 7px;
     }
-  .gif-info .identity {
-    padding: 0 0 8px 4px;
+    .gif-info li a.btn.prev {
+      -webkit-border-radius: 4px 0 0 4px;
+      -moz-border-radius: 4px 0 0 4px;
+      border-radius: 4px 0 0 4px;
+      
+      border-right: none;
+    }
+    .gif-info li a.btn.next {
+      -webkit-border-radius: 0 4px 4px 0;
+      -moz-border-radius: 0 4px 4px 0;
+      border-radius: 0 4px 4px 0;
+
+      border-left: 1px solid #005Fa1;
+      margin-left: 0;
+    }
+    
+  .gif-info .gif-uploader {
+    margin: 5px 10px 0 14px;
   }
+  .gif-info li.gif-uploader a {
+    color: #8dF;
+  }
+  .gif-info ul.left {
+    float: left;
+  }
+  .gif-info ul.right {
+    float: right;
+  }
+
+
+  .gif-nav .btn.large {
+    border-width: 0 1px 1px;
+  }
+    .gif-nav .btn.large.primary {
+        border-width: 1px;
+    }
 
 
 /* below only valid if tweet stream is present */
