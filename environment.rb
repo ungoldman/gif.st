@@ -30,7 +30,6 @@ class Controller < Sinatra::Base
 
   configure :production do
     DataMapper.setup :default, ENV['DATABASE_URL']
-    require 'newrelic_rpm'
   end
 end
 

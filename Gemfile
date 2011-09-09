@@ -16,7 +16,6 @@ gem 'thin',                '1.2.11'
 gem 'rake',                '0.9.2',  :require => nil
 gem 'oauth',               '0.4.5',  :require => 'oauth/consumer'
 gem 'grackle',             '0.1.10'
-gem 'newrelic_rpm'
 
 group :development do
   gem 'shotgun',      :require => nil
