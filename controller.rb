@@ -32,7 +32,7 @@ class Controller < Sinatra::Base
   
   get '/?' do
     if @access_token
-      @tweets = @client.statuses.friends_timeline? :count => 100
+      @user = @client.account.verify_credentials.json?
       erubis :index
     else
       '<a href="/login"><img src="/img/twitter-sign-in.png"/></a>'

@@ -8,6 +8,7 @@ html {
 }
 body {
   background: transparent;
+  height: 100%;
 }
 
 #main {
@@ -29,7 +30,8 @@ ul {
 
 #main.container-fluid {
   padding: 0;
-  margin-left: -2px;
+  margin: 0 0 0 -2px;
+  height: 100%;
 }
 
 .topbar .container-fluid {
@@ -87,15 +89,21 @@ ul {
     }
     
     .topbar h3 a sup {
-      font-size: 8px;
+      font-size: 10px;
       font-weight: bold;
     }
   
-  
-  .topbar ul li a.btn {
+  .topbar .vr {
+    border-left: 1px solid #040404;
+    border-right: 1px solid #2F2F2F;
+    height: 26px;
+    display: inline-block;
+    margin: 6px 3px 1px 3px;
+  }
+  .topbar .secondary-nav a.btn {
     padding: 3px 10px;
     color: #fe5;
-    margin: 6px 0 0 10px;
+    margin: 6px 10px 0;
     text-shadow:  0 -1px 0 rgba(0, 0, 0, .5),
                   0  1px 0 rgba(255, 255, 255, .3);
     
@@ -114,6 +122,46 @@ ul {
     background: linear-gradient(#372 0%, #261 100%);
     color: #fff677;
   }
+  .topbar .secondary-nav .twipsy {
+    display: none;
+    left: -97px;
+    top: 3px;
+  }
+    .topbar .secondary-nav .twipsy .twipsy-inner {
+      font-size: 13px;
+      padding: 6px 10px;
+    }
+  
+  
+  
+    #session {
+    display: inline-block;
+    padding: 10px 12px;
+    height: 20px;
+    vertical-align: top;
+    cursor: pointer;
+    white-space: nowrap;
+    _width: 0;
+    }
+    #profile_img {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: top;
+    margin-right: 6px;
+    border: none;
+    cursor: pointer;
+    }
+    #screen-name {
+    color: #BABABA;
+    cursor: pointer;
+    font-weight: normal;
+    display: inline-block;
+    max-width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    }
   
 div.container-fluid div.sidebar {
   background: #777;
@@ -129,6 +177,10 @@ div.container-fluid div.sidebar {
 div.container-fluid div.content {
   max-width: none;
   margin-left: 0;
+  /*
+  vertical-align: middle;
+  display: table-cell;*/
+  padding-top: 95px;
 }
 
 .sidebar .btn.large {
@@ -149,8 +201,12 @@ div.container-fluid div.content {
 
 /* gif control */
 #gif-sandbox {
-  padding-top: 8px;
+  padding-top: 0;
   position: relative;
+  
+  /*display: table;*/
+  height: 100%;
+  width: 100%;
 }
   #gif-sandbox .content {
     position: relative;
@@ -158,7 +214,9 @@ div.container-fluid div.content {
   .gif-current {
     display: block;
     margin: 0 auto;
-    padding: 44px 0 9px;
+    padding: 0;
+    
+    box-shadow: 0 5px 20px rgba(0,0,0,.5);
   }
   .gif-info {
     background-color: #555;
