@@ -5,6 +5,8 @@ html {
   background: -webkit-linear-gradient(#333 0%, #111 100%) fixed;
   background: -moz-linear-gradient(#333 0%, #111 100%) fixed;
   background: linear-gradient(#333 0%, #111 100%) fixed;
+  
+  overflow-y: auto;
 }
 body {
   background: transparent;
