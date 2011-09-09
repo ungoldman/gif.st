@@ -58,7 +58,6 @@ GEM
     linecache19 (0.5.12)
       ruby_core_source (>= 0.1.4)
     mime-types (1.16)
-    newrelic_rpm (3.1.2)
     oauth (0.4.5)
     pg (0.10.0)
     predicated (0.2.6)
@@ -144,7 +143,6 @@ DEPENDENCIES
   dm-validations (= 1.1.0)
   erubis (= 2.7.0)
   grackle (= 0.1.10)
-  newrelic_rpm
   oauth (= 0.4.5)
   pg (= 0.10.0)
   rack-test (= 0.5.6)
