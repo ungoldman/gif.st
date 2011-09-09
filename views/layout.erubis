@@ -27,23 +27,42 @@
     <link rel="stylesheet" type="text/css" href="/css/screen.css" />
   </head>
   <body>
-    <div class="container" id="main">
+    <div class="container-fluid" id="main">
+      
       <div class="topbar">
         <div class="fill">
-          <div class="container">
-            <h3><a href="/">gif.st | alpha</a></h3>
+          <div class="container-fluid">
+            <h3><a href="/">gif.st</a></h3>
             <ul>
-              <li><a href="#">Profile</a></li>
-              <li><a href="#">Settings</a></li>
-              <li><a href="/logout">Logout</a></li>
+              <li class="active"><a href="#">random</a></li>
+              <li><a href="#">profile</a></li>
+              <li><a href="#">friends</a></li>
             </ul>
+            <ul class="nav secondary-nav">
+              <li><a href="/logout">logout</a></li>
+            </ul>
+            <!--
+            <ul class="nav secondary-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Dropdown</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Profile</a></li>
+                  <li><a href="#">Settings</a></li>
+                  <li class="divider"></li>
+                  <li><a href="/logout">Logout</a></li>
+                </ul>
+              </li>
+            </ul>
+            -->
           </div>
         </div>
       </div>
+      
       <%== yield %>
     </div>
     
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
     <script>window.jQuery || document.write('<script src="/js/libs/jquery-1.6.2.min.js">\x3C/script>')</script>
+    <script src="/js/controller.js"></script>
   </body>
 </html>

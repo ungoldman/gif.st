@@ -1,22 +1,28 @@
-<div class="row">
-  <div class="span2 columns" id="leftbar">
+<div id="gif-sandbox">
+  <div class="sidebar">
+    <ul class="gif-nav">
+      <li><a class="btn large primary"  href="#">next</a></li>
+      <li><a class="btn large info"     href="#">prev</a></li>
+    </ul>
     <ul>
-      <li><a href="#">random &gt;</a></li>
-      <li><a href="#">stream &gt;</a></li>
-      <li><a href="#">collection &gt;</a></li>
+      <li><a class="btn large info"     href="#">copy url</a></li>
+    </ul>
+    <ul class="gif-info">
+      <li>
+        <a class="btn" href="#">+</a>
+      </li>
+      <li>
+        <a class="btn" href="#">-</a>
+      </li>
+      <li>
+        <a class="btn" href="#">♥</a>
+      </li>
     </ul>
   </div>
   
-  <div class="span11 columns">
-    <img src="/img/comp.jpg" width="640" />
-    <p><a href="#">+</a> | <a href="#">-</a> | <a href="#">♥</a> | submitted by @<a href="#">thisguy</a></p>
-  </div>
-  
-  <div class="span3 columns" id="rightbar">
-    <ul>
-      <li><a href="#">&lt; today's top gifs</a></li>
-      <li><a href="#">&lt; all-time most liked</a></li>
-      <li><a href="#">&lt; all-time most hated</a></li>
-    </ul>
+  <div class="content">
+    <img class="gif-current" src="/img/comp.jpg" />
+    <div class="gif-identity">uploader: @<a href="#">thisguy</a>
+    </div>
   </div>
 </div>
