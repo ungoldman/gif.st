@@ -32,47 +32,45 @@
       <div class="topbar">
         <div class="fill">
           <div class="container">
+            
             <h3><a href="/">GIF <sup>ST</sup></a></h3>
+            
             <ul class="nav">
               <li class="active"><a href="#">random</a></li>
               <li><a href="#">profile</a></li>
               <li><a href="#">friends</a></li>
             </ul>
+            
             <form action="">
               <input type="text" placeholder="Search">
             </form>
+            
             <ul class="nav secondary-nav">
+              
               <div class="twipsy left">
                 <div class="twipsy-arrow"></div>
                 <div class="twipsy-inner">upload a gif!</div>
               </div>
               <li><a class="btn success" href="#">&uarr;</a></li>
+              
               <li>
                 <span class="vr"></span>
               </li>
+              
               <li class="dropdown">
-                <a class="dropdown-toggle" href="#"><img id="profile_img" src="<%= @user.profile_image_url %>"/>
-                <span id="screen-name"><%= @user.screen_name %></span></a>
+                <a class="dropdown-toggle" href="#">
+                  <img id="profile_img" src="<%= @user.profile_image_url %>"/>
+                  <span id="screen-name"><%= @user.screen_name %></span>
+                </a>
                 <ul class="dropdown-menu">
                   <li><a href="#">Settings</a></li>
                   <li class="divider"></li>
                   <li><a href="/logout">Logout</a></li>
                 </ul>
               </li>
+              
             </ul>
-            <!--
-            <ul class="nav secondary-nav">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle">Dropdown</a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Profile</a></li>
-                  <li><a href="#">Settings</a></li>
-                  <li class="divider"></li>
-                  <li><a href="/logout">Logout</a></li>
-                </ul>
-              </li>
-            </ul>
-            -->
+            
           </div>
         </div>
       </div>
