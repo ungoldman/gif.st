@@ -4,9 +4,8 @@ $(function(){
       function(){ $('.topbar .secondary-nav .twipsy').fadeOut(); }
     );
     
-  $('.dropdown').hover(
-    function(){ $('.dropdown .dropdown-menu').show(); },
-    function(){ $('.dropdown .dropdown-menu').hide(); }
+  $('.dropdown').click(
+    function(e){ e.preventDefault(); $('.dropdown .dropdown-menu').toggle(); }
   );
   
 });

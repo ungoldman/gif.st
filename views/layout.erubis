@@ -54,7 +54,6 @@
                 <a class="dropdown-toggle" href="#"><img id="profile_img" src="<%= @user.profile_image_url %>"/>
                 <span id="screen-name"><%= @user.screen_name %></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Profile</a></li>
                   <li><a href="#">Settings</a></li>
                   <li class="divider"></li>
                   <li><a href="/logout">Logout</a></li>
