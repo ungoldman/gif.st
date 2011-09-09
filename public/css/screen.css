@@ -1,3 +1,13 @@
+a:active {
+  outline: none;
+}
+:focus {
+  -moz-outline-style: none;
+}
+:-moz-any-link:focus {
+  outline: none;
+}
+
 html {
   height: 100%;
 }
@@ -134,6 +144,19 @@ ul {
       padding: 6px 10px;
     }
   
+  /* ff fix */
+  .dropdown .dropdown-toggle {
+    height: 30px;
+    padding-bottom: 0;
+    line-height: 1;
+  }
+  .dropdown .dropdown-toggle #screen-name {
+    line-height: 19px;
+  }
+  
+  .dropdown .dropdown-toggle .dropdown-active {
+    background: rgba(255, 255, 255, 0.05);
+  }
   
   
     #session {
