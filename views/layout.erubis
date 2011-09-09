@@ -31,7 +31,7 @@
       
       <div class="topbar">
         <div class="fill">
-          <div class="container">
+          <div class="container-fluid">
             
             <h3><a href="/">GIF <sup>ST</sup></a></h3>
             

@@ -47,7 +47,10 @@ ul {
 }
 
 .topbar .container-fluid {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 940px;
+  min-width: 670px;
+  padding: 0;
 }
   .topbar h3 a,
   .topbar h3 a:link,
@@ -229,16 +232,16 @@ div.container-fluid div.content {
   padding-top: 0;
   position: relative;
   
-  /*display: table;*/
-  height: 100%;
-  width: 100%;
+  margin: 0 auto;
+  max-width: 940px;
+  min-width: 650px;
+  padding: 0 10px;
 }
   #gif-sandbox .content {
     position: relative;
   }
   .gif-current {
     display: block;
-    margin: 0 auto;
     padding: 0;
     
     box-shadow: 0 5px 20px rgba(0,0,0,.5);
