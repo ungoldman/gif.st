@@ -93,22 +93,26 @@ ul {
   
   
   .topbar ul li a.btn {
-    padding: 4px 14px;
-    color: #333;
-    margin: 5px 10px 0 0;
+    padding: 3px 10px;
+    color: #fe5;
+    margin: 6px 0 0 10px;
+    text-shadow:  0 -1px 0 rgba(0, 0, 0, .5),
+                  0  1px 0 rgba(255, 255, 255, .3);
+    
+    background: #150;
+    background: -webkit-linear-gradient(#261 0%, #150 100%);
+    background: -moz-linear-gradient(#261 0%, #150 100%);
+    background: linear-gradient(#261 0%, #150 100%);
   }
   .topbar ul li a.btn:hover,
   .topbar ul li a.btn:focus,
   .topbar ul li a.btn:active {
-    background-color: #97D397;
+    background-color: #261;
     background-repeat: repeat-x;
-    background-image: -khtml-gradient(linear, left top, left bottom, from(#dff1df), to(#97d397));
-    background-image: -moz-linear-gradient(#dff1df, #97d397);
-    background-image: -ms-linear-gradient(#dff1df, #97d397);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dff1df), color-stop(100%, #97d397));
-    background-image: -webkit-linear-gradient(#dff1df, #97d397);
-    background-image: -o-linear-gradient(#dff1df, #97d397);
-    background-image: linear-gradient(#dff1df, #97d397);
+    background: -webkit-linear-gradient(#372 0%, #261 100%);
+    background: -moz-linear-gradient(#372 0%, #261 100%);
+    background: linear-gradient(#372 0%, #261 100%);
+    color: #fff677;
   }
   
 div.container-fluid div.sidebar {
