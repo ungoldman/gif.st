@@ -14,17 +14,18 @@ I'm also trying out Twitter's brand new [Bootstrap](http://twitter.github.com/bo
 Completed:
 ----------
 
-* Using Sammy Davis Jr for Ruby boilerplate
-* Twitter App created, Twitter OAuth implemented
-* Deployed to cedar stack for staging
-* Using Twitter Bootstrap for CSS boilerplate
+* Use Sammy Davis Jr for Ruby boilerplate
+* Implement Twitter OAuth
+* Deploy to Heroku's Cedar stack for staging
+* Use Twitter Bootstrap for CSS boilerplate
+* Build UI
+* Connect to Amazon S3
 
 Next steps:
 -----------
 
-* persistent users
-* connect to amazon rds
-* crud for gifs
-* user gif collections, tag clouds, voting system
-* implement free piggyback ssl via heroku
-* do some other cool stuff
+* Write Gif & User models
+* Write CRUD for Gifs
+* Implement Short URLs
+* Build rating & favorites system
+* Allow posts to Twitter
