@@ -41,9 +41,8 @@ ul {
 }
 
 #main.container-fluid {
+  margin-top: 40px;
   padding: 0;
-  margin: 0 0 0 -2px;
-  height: 100%;
 }
 
 .topbar .container-fluid {
@@ -202,15 +201,6 @@ div.container-fluid div.sidebar {
   width: 91px;
 }
 
-div.container-fluid div.content {
-  max-width: none;
-  margin-left: 0;
-  /*
-  vertical-align: middle;
-  display: table-cell;*/
-  padding-top: 95px;
-}
-
 .sidebar .btn.large {
   display: block;
   margin-bottom: -1px;
@@ -229,16 +219,20 @@ div.container-fluid div.content {
 
 /* gif control */
 #gif-sandbox {
-  padding-top: 0;
-  position: relative;
-  
   margin: 0 auto;
   max-width: 940px;
   min-width: 650px;
-  padding: 0 10px;
+  padding: 53px 10px 0;
+  position: relative;
 }
   #gif-sandbox .content {
     position: relative;
+    max-width: none;
+    margin-left: 0;
+    /*
+    vertical-align: middle;
+    display: table-cell;
+    padding-top: 95px;*/
   }
   .gif-current {
     display: block;

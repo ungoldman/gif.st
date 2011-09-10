@@ -1,33 +1,8 @@
 class Controller < Sinatra::Base
   
   before do
-    session[:oauth] ||= {}
-    
-    @host = request.host
-    @host << ":9292" if request.host == "localhost" # set to dev port if local
-    
-    consumer_key = ENV['consumer_key']
-    consumer_secret = ENV['consumer_secret']
-    
-    @consumer ||= OAuth::Consumer.new(consumer_key, consumer_secret, :site => "http://twitter.com")
-    
-    if !session[:oauth][:request_token].nil? && !session[:oauth][:request_token_secret].nil?
-      @request_token = OAuth::RequestToken.new(@consumer, session[:oauth][:request_token], session[:oauth][:request_token_secret])
-    end
-    
-    if !session[:oauth][:access_token].nil? && !session[:oauth][:access_token_secret].nil?
-      @access_token = OAuth::AccessToken.new(@consumer, session[:oauth][:access_token], session[:oauth][:access_token_secret])
-    end
-    
-    if @access_token
-      @client = Grackle::Client.new(:auth => {
-        :type => :oauth,
-        :consumer_key => consumer_key,
-        :consumer_secret => consumer_secret,
-        :token => @access_token.token,
-        :token_secret => @access_token.secret
-      })
-    end
+    oauth_connect
+    s3_connect
   end
   
   get '/?' do
@@ -56,6 +31,44 @@ class Controller < Sinatra::Base
   get '/logout/?' do
     session[:oauth] = {}
     redirect '/'
+  end
+  
+  get '/s3/?' do
+    if @access_token
+      @user = @client.account.verify_credentials.json?
+      @total_files = @bucket.inspect
+      erubis :s3_test
+    else
+      '<a href="/login"><img src="/img/twitter-sign-in.png"/></a>'
+    end
+  end
+  
+  post '/gif' do
+    @gif = Gif.new(
+      :short_url => gen_short_url,
+      :filename => params[:filename],
+      :s3_location => s3_save)
+    
+    # !!!!!
+    # need to implement a method for saving to s3,
+    # confirming save, then creating local object
+
+    if @gif.save
+      status 201
+      redirect '/' + @gif.short_url
+    else
+      status 400
+      'error'
+    end
+  end
+  
+  get '/:short_url' do
+    begin
+      @gif = Gif.get(params[:short_url])
+      @gif.s3_location
+    rescue
+      status 404
+    end
   end
   
 end

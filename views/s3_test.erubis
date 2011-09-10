@@ -1,0 +1,1 @@
+<p>inspecting gif.st bucket object: <%= @total_files %></p>
