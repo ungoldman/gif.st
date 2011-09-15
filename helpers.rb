@@ -3,10 +3,23 @@ class Sinatra::Base
     def h(text); Rack::Utils.escape_html text end
     
     def init_user
-      oauth_connect
+      if @access_token
+        @cred = @client.account.verify_credentials.json?
+        @user = User.first_or_create({ :uid => @cred.id }, {
+          :uid => @cred.id,
+          :name => @cred.screen_name,
+          :img => @cred.profile_image_url
+        })
+        @user.save
+        session[:uid] = @user.uid
       
-      @cred = @client.account.verify_credentials.json?
-      @user = User.first_or_create :screen_name => @cred.screen_name
+        puts "#{request.env['REQUEST_METHOD']} #{request.path}"
+        puts "UID: #{@user.uid}"
+        puts "User: #{@user.inspect}"
+        puts "problem saving" if not @user.saved?
+      else
+        redirect '/login'
+      end
     end
     
     def partial(template, *args)
@@ -78,7 +91,7 @@ class Sinatra::Base
 
       # Until retreiving a Link with this short_url returns
       # false, generate a new short_url and try again.
-      until Link.get(tmp).nil?
+      until Gif.get(tmp).nil?
         tmp = chars[rand(62)] + chars[rand(62)] + chars[rand(62)]
       end
 

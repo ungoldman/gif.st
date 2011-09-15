@@ -18,6 +18,7 @@ gem 'rake',                '0.9.2',  :require => nil
 gem 'oauth',               '0.4.5',  :require => 'oauth/consumer'
 gem 'grackle',             '0.1.10'
 gem 'aws-s3',              '0.6.2'
+gem 'fileutils'
 
 group :development do
   gem 'shotgun',      :require => nil

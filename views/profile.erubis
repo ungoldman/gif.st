@@ -1,0 +1,7 @@
+<div class="content">
+  <div id="profile">
+    <img src="<%= @user.img %>" alt="" />
+    <p>@<a href="http://twitter.com/<%= @user.name %>"><%= @user.name %></a></p>
+    <p>UID: <%= @user.uid %></p>
+  </div>
+</div>
