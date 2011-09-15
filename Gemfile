@@ -5,6 +5,7 @@ gem 'dm-validations',      '1.1.0'
 gem 'dm-aggregates',       '1.1.0'
 gem 'dm-timestamps',       '1.1.0'
 gem 'dm-postgres-adapter', '1.1.0'
+gem 'dm-sqlite-adapter'
 gem 'dm-migrations',       '1.1.0',  :require => nil
 gem 'erubis',              '2.7.0'
 gem 'yajl-ruby',           '0.8.2',  :require => 'yajl/json_gem'

@@ -12,6 +12,11 @@ class Controller < Sinatra::Base
   register Sinatra::Synchrony
   register Sinatra::Namespace
   register Sinatra::Flash
+  
+  def self.development?; (environment.to_s =~ /dev/ ? true : false); end
+  def self.configure(*envs, &block)
+    yield self if envs.empty? || envs.include?(environment.to_sym) || (environment.to_s =~ /dev/ && envs.first.eql?(:development))
+  end
 
   set :method_override, true
   set :public,          'public'
@@ -26,13 +31,13 @@ class Controller < Sinatra::Base
   set :bucket,          ENV['S3_GIF_BUCKET']
 
   configure :development do
+    use Rack::CommonLogger
     Bundler.require :development
     DataMapper::Logger.new STDOUT, :debug
-    DataMapper.setup :default, YAML.load_file(File.join(root, 'config', 'database.yml'))[environment.to_s]
+    DataMapper.setup :default, "sqlite3:///#{File.expand_path(File.dirname(__FILE__))}/#{Sinatra::Base.environment}.db"
   end
 
   configure :test do
-    DataMapper.setup :default, YAML.load_file(File.join(root, 'config', 'database.yml'))[environment.to_s]
   end
 
   configure :production do
