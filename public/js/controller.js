@@ -20,4 +20,7 @@ $(function(){
    $('.dropdown').click(function(event){
        event.stopPropagation();
    });
+   $('.dropdown-menu').click(function(event){
+       event.stopPropagation();
+   });
 });

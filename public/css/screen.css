@@ -269,20 +269,24 @@ div.container-fluid div.sidebar {
       margin-left: 6px;
       text-align: center;
     }
-    .gif-info li a.btn.prev {
+    .gif-info li a.btn.pair-left {
       -webkit-border-radius: 4px 0 0 4px;
       -moz-border-radius: 4px 0 0 4px;
       border-radius: 4px 0 0 4px;
       
       border-right: none;
+      margin-left: 0;
     }
-    .gif-info li a.btn.next {
+    .gif-info li a.btn.pair-right {
       -webkit-border-radius: 0 4px 4px 0;
       -moz-border-radius: 0 4px 4px 0;
       border-radius: 0 4px 4px 0;
 
-      border-left: 1px solid #005Fa1;
+      border-left: 1px solid rgba(50,50,50,.5);
       margin-left: 0;
+    }
+    .gif-info li a.btn.primary.pair-right {
+
     }
     
   .gif-info .gif-uploader {

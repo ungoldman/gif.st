@@ -43,6 +43,13 @@ class Controller < Sinatra::Base
     end
   end
   
+  get '/credcheck' do
+    cred = @client.account.verify_credentials.json?
+    screen_name = cred.screen_name
+    user = @client.users.show? :screen_name=> screen_name
+    user
+  end
+  
   post '/gif' do
     @gif = Gif.new(
       :short_url => gen_short_url,

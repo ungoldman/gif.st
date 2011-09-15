@@ -2,6 +2,13 @@ class Sinatra::Base
   helpers do
     def h(text); Rack::Utils.escape_html text end
     
+    def init_user
+      oauth_connect
+      
+      @cred = @client.account.verify_credentials.json?
+      @user = User.first_or_create :screen_name => @cred.screen_name
+    end
+    
     def partial(template, *args)
       template_array = template.to_s.split('/')
       template = template_array[0..-2].join('/') + "/_#{template_array[-1]}"

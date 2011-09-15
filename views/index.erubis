@@ -7,14 +7,14 @@
     <div class="gif-info">
       <div class="container">
         <ul class="left">
-          <li><a class="btn primary prev disabled" href="#">prev</a></li>
-          <li><a class="btn primary next" href="#">next</a></li>
+          <li><a class="btn primary pair-left disabled" href="#">prev</a></li>
+          <li><a class="btn primary pair-right" href="#">next</a></li>
           <li><a class="btn info" href="#">copy url</a></li>
       
           <li class="gif-uploader">uploader: @<a href="#">thisguy</a></li>
       
-          <li><a class="btn plus" href="#">+</a></li>
-          <li><a class="btn minus" href="#">-</a></li>
+          <li><a class="btn plus pair-left" href="#">+</a></li>
+          <li><a class="btn minus pair-right" href="#">-</a></li>
           <li><a class="btn favorite" href="#">♥</a></li>
         </ul>
       </div>
