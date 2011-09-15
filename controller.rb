@@ -45,9 +45,8 @@ class Controller < Sinatra::Base
   
   get '/credcheck' do
     cred = @client.account.verify_credentials.json?
-    screen_name = cred.screen_name
-    user = @client.users.show? :screen_name=> screen_name
-    user
+    id = cred.id
+    id.inspect
   end
   
   post '/gif' do
