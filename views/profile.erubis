@@ -5,7 +5,7 @@
       <p>@<a href="http://twitter.com/<%= @profile.name %>" width="48"><%= @profile.name %></a></p>
     </div>
     <div class="collection">
-      <% if !@profile.gifs.nil? %>
+      <% if @profile.gifs.length != 0 %>
       <h3>@<%= @profile.name %>'s gif collection</h3>
       <ul>
         <% @profile.gifs.each_with_index do |gif, i| %>
