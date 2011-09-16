@@ -36,14 +36,14 @@
             <h3><a href="/">GIF <sup>ST</sup></a></h3>
             
             <ul class="nav primary-links">
-              <li class="active"><a href="/latest">latest</a></li>
+              <li><a href="/latest">latest</a></li>
               <li><a href="/profile">profile</a></li>
               <!--<li><a href="#">friends</a></li>-->
             </ul>
             
-            <form action="">
+            <!--<form action="">
               <input type="text" placeholder="Search">
-            </form>
+            </form>-->
             
             <ul class="nav secondary-nav">
               

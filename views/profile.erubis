@@ -3,6 +3,7 @@
     <div class="id">
       <img src="<%= @profile.img %>" alt="" />
       <p>@<a href="http://twitter.com/<%= @profile.name %>" width="48"><%= @profile.name %></a></p>
+      <a class="btn large primary" href="#">Follow</a>
     </div>
     <div class="collection">
       <% if @profile.gifs.length != 0 %>

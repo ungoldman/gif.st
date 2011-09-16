@@ -6,14 +6,14 @@
     <div class="container">
       <ul class="left">
         <li><a class="btn primary pair-left disabled" href="#">prev</a></li>
-        <li><a class="btn primary pair-right" href="#">next</a></li>
-        <!--<li><a class="btn info" href="#">copy url</a></li>-->
+        <li><a class="btn primary pair-right disabled" href="#">next</a></li>
+        <li><a class="btn info" href="/<%= @gif.short_url %>">get short url</a></li>
     
         <li class="gif-uploader">uploader: @<a href="/profile/<%= @gif.user.name %>"><%= @gif.user.name %></a></li>
     
-        <li><a class="btn plus pair-left" href="#">+</a></li>
-        <li><a class="btn minus pair-right" href="#">-</a></li>
-        <li><a class="btn favorite" href="#">♥</a></li>
+        <li><a class="btn plus pair-left disabled" href="#">+</a></li>
+        <li><a class="btn minus pair-right disabled" href="#">-</a></li>
+        <li><a class="btn favorite disabled" href="#">♥</a></li>
       </ul>
     </div>
   </div>
