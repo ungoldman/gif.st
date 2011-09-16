@@ -63,8 +63,8 @@
                   <span class="screen-name"><%= @user.name %></span>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Settings</a></li>
-                  <li class="divider"></li>
+                  <!--<li><a href="#">Settings</a></li>
+                  <li class="divider"></li>-->
                   <li><a href="/logout">Logout</a></li>
                 </ul>
               </li>

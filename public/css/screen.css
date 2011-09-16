@@ -8,14 +8,12 @@ a:active {
   outline: none;
 }
 
-html {
-  height: 100%;
-
+html {  
   background: #222;
   background: -webkit-linear-gradient(#333 0%, #111 100%) fixed;
   background: -moz-linear-gradient(#333 0%, #111 100%) fixed;
   background: linear-gradient(#333 0%, #111 100%) fixed;
-  
+  height: 100%;
   overflow-y: auto;
 }
 body {
@@ -56,21 +54,20 @@ ul {
   .topbar h3 a:hover,
   .topbar h3 a:active,
   .topbar h3 a:focus {
-    color: #ED3;
-    font-weight: bold;
-    padding: 2px 0 4px 2px;
-    text-align: center;
-    width: 69px;
-    
-    font-size: 18px;
     background: #030;
     background: -webkit-linear-gradient(#150 0%, #030 100%);
     background: -moz-linear-gradient(#150 0%, #030 100%);
     background: linear-gradient(#150 0%, #030 100%);
-    margin: 6px 10px 0 4px;
     border: 2px solid #bb8;
     border-color: #bb8 #aa7 #776;
     border-radius: 5px;
+    color: #ED3;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 6px 10px 0 4px;
+    padding: 2px 0 4px 2px;
+    text-align: center;
+    width: 69px;
     -webkit-transform: rotate(-1deg);
     -moz-transform: rotate(-1deg);
     
@@ -83,8 +80,6 @@ ul {
   	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
   }
     .topbar h3 a:hover {
-
-  
       /*
       -webkit-transform: rotate(-2deg);
       -moz-transform: rotate(-2deg);
@@ -110,21 +105,20 @@ ul {
   .topbar .vr {
     border-left: 1px solid #040404;
     border-right: 1px solid #2F2F2F;
-    height: 26px;
     display: inline-block;
+    height: 26px;
     margin: 6px 3px 1px 3px;
   }
   .topbar .secondary-nav a.btn {
-    padding: 3px 10px;
-    color: #fe5;
-    margin: 6px 10px 0;
-    text-shadow:  0 -1px 0 rgba(0, 0, 0, .5),
-                  0  1px 0 rgba(255, 255, 255, .3);
-    
     background: #150;
     background: -webkit-linear-gradient(#261 0%, #150 100%);
     background: -moz-linear-gradient(#261 0%, #150 100%);
     background: linear-gradient(#261 0%, #150 100%);
+    color: #fe5;
+    margin: 6px 10px 0;
+    padding: 3px 10px;
+    text-shadow:  0 -1px 0 rgba(0, 0, 0, .5),
+                  0  1px 0 rgba(255, 255, 255, .3);
   }
   .topbar ul li a.btn:hover,
   .topbar ul li a.btn:focus,
@@ -149,8 +143,8 @@ ul {
   /* ff fix */
   .dropdown .dropdown-toggle {
     height: 30px;
-    padding-bottom: 0;
     line-height: 1;
+    padding-bottom: 0;
   }
   .dropdown .dropdown-toggle .screen-name {
     line-height: 19px;
@@ -162,32 +156,32 @@ ul {
   
   
     /*#session {
-    display: inline-block;
-    padding: 10px 12px;
-    height: 20px;
-    vertical-align: top;
-    cursor: pointer;
-    white-space: nowrap;
-    _width: 0;
+      display: inline-block;
+      padding: 10px 12px;
+      height: 20px;
+      vertical-align: top;
+      cursor: pointer;
+      white-space: nowrap;
+      _width: 0;
     }*/
     #session .profile_img {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    vertical-align: top;
-    margin-right: 6px;
-    border: none;
-    cursor: pointer;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      height: 20px;
+      margin-right: 6px;
+      vertical-align: top;
+      width: 20px;
     }
     #session .screen-name {
-    color: #BABABA;
-    cursor: pointer;
-    font-weight: normal;
-    display: inline-block;
-    max-width: 200px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+      color: #BABABA;
+      cursor: pointer;
+      display: inline-block;
+      font-weight: normal;
+      max-width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   
 div.container-fluid div.sidebar {
@@ -241,6 +235,8 @@ div.container-fluid div.sidebar {
     display: block;
     padding: 0;
     
+    -webkit-box-shadow: 0 5px 20px rgba(0,0,0,.5);
+    -moz-box-shadow: 0 5px 20px rgba(0,0,0,.5);
     box-shadow: 0 5px 20px rgba(0,0,0,.5);
   }
   .gif-info {
@@ -321,7 +317,7 @@ div.container-fluid div.sidebar {
   padding: 10px;
   display: inline-block;
   
-  width: 83px;
+  width: 92px;
   text-align: center;
   border-radius: 10px;
   margin-right: 30px;
@@ -345,7 +341,13 @@ div.container-fluid div.sidebar {
   margin-bottom: 25px;
 }
 #profile .collection li { float: left; }
-#profile .collection li img { width: 150px; margin: 0 15px 15px 0; }
+#profile .collection li img.user-gif {
+  -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.4);
+  -moz-box-shadow: 0 3px 9px rgba(0,0,0,.4);
+  box-shadow: 0 3px 9px rgba(0,0,0,.4);
+  margin: 0 15px 15px 0;
+  width: 150px;
+}
 
 /* modal */
 

@@ -3,14 +3,14 @@
     <div class="id">
       <img src="<%= @profile.img %>" alt="" />
       <p>@<a href="http://twitter.com/<%= @profile.name %>" width="48"><%= @profile.name %></a></p>
-      <a class="btn large primary" href="#">Follow</a>
+      <a class="btn small primary" href="#">follow on gif.st</a>
     </div>
     <div class="collection">
       <% if @profile.gifs.length != 0 %>
       <h3>@<%= @profile.name %>'s gif collection</h3>
       <ul>
         <% @profile.gifs.each_with_index do |gif, i| %>
-              <li id="gif_<%= i %>" class="user-gifs">
+              <li id="gif_<%= i %>" class="user-gif">
                 <a href="/g/<%= gif.short_url %>"><img src="<%= gif.location %>" width="150" /></a>
               </li>
             <% end %>

@@ -120,7 +120,7 @@ class Controller < Sinatra::Base
     
     if @gif.save
       status 201
-      redirect '/' + short_url
+      redirect '/g/' + short_url
     else
       status 400
       'error saving gif to database'
