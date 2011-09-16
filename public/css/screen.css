@@ -46,7 +46,7 @@ ul {
 .topbar .container-fluid {
   margin: 0 auto;
   max-width: 940px;
-  min-width: 450px;
+  min-width: 600px;
   padding: 0 10px;
 }
   .topbar h3 a,
@@ -215,7 +215,7 @@ div.container-fluid div.sidebar {
 #sandbox {
   margin: 0 auto;
   max-width: 940px;
-  min-width: 450px;
+  min-width: 600px;
   padding: 53px 10px 0;
   position: relative;
 }

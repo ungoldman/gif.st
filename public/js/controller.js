@@ -33,10 +33,44 @@ $(function(){
   });
   
   /* upload */
-  $('.topbar .secondary-nav .btn.upload').hover(
-    function(){ $('.topbar .secondary-nav .twipsy').fadeIn(); },
-    function(){ $('.topbar .secondary-nav .twipsy').fadeOut(); }
-  );
+  function Uploader() {
+
+    if ($('#uploader').length == 0) {
+      this.html = '<div id="uploader" class="modal-wrapper">' +
+        '<div class="modal">' +
+        '<div class="modal-header">' +
+          '<h3>Gif Uploader</h3>' +
+          '<a href="#" class="close">×</a>' +
+        '</div>' +
+        '<form action="/gif/new" method="post" enctype="multipart/form-data">' +
+        '<div class="modal-body">' +
+          '<p>Select File to Upload...</p>' +
+          '<p>' +
+            '<input type="file" name="file">' +
+          '</p>' +
+        '</div>' +
+        '<div class="modal-footer">' +
+          '<input name="commit" type="submit" class="btn primary" value="Upload" />' +
+          '<a href="#" class="btn secondary">Cancel</a>' +
+        '</div>' +
+      '</div>' +
+      '</div>';
+
+      $('#main').prepend(this.html);
+      
+      /* close dialog box */
+      $('#uploader .close').click(function(event){
+        event.preventDefault();
+        $('#uploader').remove();
+        $('.topbar .secondary-nav .btn.upload').removeClass('disabled');
+      });
+      $('#uploader .modal-footer .btn.secondary').click(function(event){
+        event.preventDefault();
+        $('#uploader').remove();
+        $('.topbar .secondary-nav .btn.upload').removeClass('disabled');
+      });
+    };
+  };
   
   $('.topbar .secondary-nav .btn.upload').click(function(event){
     event.preventDefault();
@@ -44,43 +78,3 @@ $(function(){
     $(this).addClass('disabled');
   });
 });
-
-function Uploader() {
-  
-  if ($('#uploader').length == 0) {
-    this.html = '<div id="uploader" class="modal-wrapper">' +
-      '<div class="modal">' +
-      '<div class="modal-header">' +
-        '<h3>Gif Uploader</h3>' +
-        '<a href="#" class="close">×</a>' +
-      '</div>' +
-      '<form action="/gif/new" method="post" enctype="multipart/form-data">' +
-      '<div class="modal-body">' +
-        '<p>Select File to Upload...</p>' +
-        '<p>' +
-          '<input type="file" name="file">' +
-        '</p>' +
-      '</div>' +
-      '<div class="modal-footer">' +
-        '<input name="commit" type="submit" class="btn primary" value="Upload" />' +
-        '<a href="#" class="btn secondary">Cancel</a>' +
-      '</div>' +
-    '</div>' +
-    '</div>';
-    
-    $('#main').prepend(this.html);
-    
-    /*
-    /* close dialog box */
-    $('#uploader .close').click(function(event){
-      event.preventDefault();
-      $('#uploader').remove();
-      $('.topbar .secondary-nav .btn.upload').removeClass('disabled');
-    });
-    $('#uploader .modal-footer .btn.secondary').click(function(event){
-      event.preventDefault();
-      $('#uploader').remove();
-      $('.topbar .secondary-nav .btn.upload').removeClass('disabled');
-    });
-  };
-};

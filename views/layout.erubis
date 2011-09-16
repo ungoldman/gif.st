@@ -48,11 +48,7 @@
             
             <ul class="nav secondary-nav">
               
-              <div class="twipsy left">
-                <div class="twipsy-arrow"></div>
-                <div class="twipsy-inner">upload a gif!</div>
-              </div>
-              <li><a class="btn success upload" href="#">&uarr;</a></li>
+              <li><a class="btn success upload" href="#">upload a gif</a></li>
               
               <li>
                 <span class="vr"></span>
