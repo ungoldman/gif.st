@@ -67,7 +67,11 @@ class Controller < Sinatra::Base
         erubis :gif
       end
     else
-      erubis :index
+      if params['ajax']
+        erubis :index, :layout => false
+      else
+        erubis :index
+      end
     end
   end
   
@@ -81,7 +85,11 @@ class Controller < Sinatra::Base
         erubis :gif
       end
     else
-      erubis :index
+      if params['ajax']
+        erubis :index, :layout => false
+      else
+        erubis :index
+      end
     end
   end
   
@@ -90,22 +98,6 @@ class Controller < Sinatra::Base
     session[:uid] = {}
     redirect '/'
   end
-  
-  get '/s3/?' do
-    init_user
-    @total_files = @bucket.inspect
-    erubis :s3_test
-  end
-  
-  get '/credcheck' do
-    cred = @client.account.verify_credentials.json?
-    id = cred.id
-    id.inspect
-  end
-  
-  get '/api/gif/random/?' do
-    
-  end    
   
   post '/gif/new' do
     init_user
@@ -159,7 +151,7 @@ class Controller < Sinatra::Base
     end
   end
   
-  get '/:short_url' do
+  get '/:short_url/?' do
     @gif = Gif.first(:short_url => params[:short_url])
     if @gif
       '<img src="' + @gif.location + '" />'
