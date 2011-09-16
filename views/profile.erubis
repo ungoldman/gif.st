@@ -1,10 +1,14 @@
 <div class="content">
-  <div id="profile">
-    <div class="id">
-      <img src="<%= @profile.img %>" alt="" />
-      <p>@<a href="http://twitter.com/<%= @profile.name %>" width="48"><%= @profile.name %></a></p>
-      <a class="btn small primary" href="#">follow on gif.st</a>
+  <div class="gif-info">
+    <div class="container">
+      <ul class="left">
+        <li><img class="profile_img id" src="<%= @profile.img %>" /></li>
+        <li class="gif-uploader">@<a href="http://twitter.com/<%= @profile.name %>" width="48"><%= @profile.name %></a></li>
+        <li><a class="btn small primary" href="#">follow on gif.st</a></li>
+      </ul>
     </div>
+  </div>
+  <div id="profile">
     <div class="collection">
       <% if @profile.gifs.length != 0 %>
       <h3>@<%= @profile.name %>'s gif collection</h3>
