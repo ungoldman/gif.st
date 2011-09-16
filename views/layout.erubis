@@ -36,7 +36,7 @@
             <h3><a href="/">GIF <sup>ST</sup></a></h3>
             
             <ul class="nav primary-links">
-              <li><a href="/random">random</a></li>
+              <li class="active"><a href="/latest">latest</a></li>
               <li><a href="/profile">profile</a></li>
               <!--<li><a href="#">friends</a></li>-->
             </ul>

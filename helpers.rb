@@ -10,9 +10,12 @@ class Sinatra::Base
           :name => @cred.screen_name,
           :img => @cred.profile_image_url
         })
+        if @user.new?
+          puts 'new user #{@user.name} created'
+        end
         @user.save
         session[:uid] = @user.uid
-      
+        
         puts "#{request.env['REQUEST_METHOD']} #{request.path}"
         puts "UID: #{@user.uid}"
         puts "User: #{@user.inspect}"

@@ -7,7 +7,12 @@ class Controller < Sinatra::Base
   
   get '/?' do
     init_user
-    erubis :index
+    @gif = Gif.last
+    if @gif
+      erubis :gif
+    else
+      erubis :index
+    end
   end
   
   get '/login' do
@@ -30,6 +35,7 @@ class Controller < Sinatra::Base
   
   get '/profile/?' do
     init_user
+    @profile = @user
     if params['ajax']
       erubis :profile, :layout => false
     else
@@ -37,12 +43,27 @@ class Controller < Sinatra::Base
     end
   end
   
-  get '/random/?' do
+  get '/profile/:user/?' do
     init_user
-    if params['ajax']
-      erubis :random, :layout => false
+    @profile = User.first(:name => params[:user])
+    if @profile
+      if params['ajax']
+        erubis :profile, :layout => false
+      else
+        erubis :profile
+      end
     else
-      erubis :random
+      'invalid profile'
+    end
+  end
+  
+  get '/latest/?' do
+    init_user
+    @gif = Gif.last
+    if params['ajax']
+      erubis :gif, :layout => false
+    else
+      erubis :gif
     end
   end
   
@@ -72,35 +93,37 @@ class Controller < Sinatra::Base
     init_user
     
     gifdir = File.join('public', 'gif')
+    short_url = gen_short_url
+    filename = File.join(gifdir, short_url + '.gif')    
+    file = params[:file]
     
-    filename = File.join(gifdir, gen_short_url + '.gif')
     puts filename
     
-    file = params[:file]
-    puts file.inspect
-    
-    AWS::S3::S3Object.store(filename, open(file[:tempfile]), 'gif.st')
-    
-    "wrote to #{filename} on gif.st S3\n"
-  end
-  
-  post '/gif/maybe' do
-    init_user
     @gif = Gif.new(
-      :short_url => gen_short_url,
-      :filename => params[:filename],
-      :s3_location => s3_save)
+      :short_url => short_url,
+      :filename => filename
+    )
+    @gif.user = @user
     
-    # !!!!!
-    # need to implement a method for saving to s3,
-    # confirming save, then creating local object
-
+    puts @gif.inspect
+    
+    @save = AWS::S3::S3Object.store(
+      filename,
+      open(file[:tempfile]),
+      'gif.st',
+      :access => :public_read
+    )
+    
+    if @save
+      puts 'file saved on gif.st s3 bucket'
+    end
+    
     if @gif.save
       status 201
-      redirect '/' + @gif.short_url
+      redirect '/' + short_url
     else
       status 400
-      'error'
+      'error saving gif to database'
     end
   end
   
@@ -108,13 +131,22 @@ class Controller < Sinatra::Base
     ''
   end
   
+  get '/g/:short_url/?' do
+    init_user
+    @gif = Gif.get(params[:short_url])
+    if @gif
+      erubis :gif
+    else
+      'invalid gif'
+    end
+  end
+  
   get '/:short_url' do
-    begin
-      @gif = Gif.get(params[:short_url])
-      @gif.s3_location
-    rescue
-      puts 'invalid gif request'
-      status 404
+    @gif = Gif.get(params[:short_url])
+    if @gif
+      '<img src="' + @gif.location + '" />'
+    else
+      'invalid gif'
     end
   end
   

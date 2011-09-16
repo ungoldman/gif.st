@@ -1,7 +1,22 @@
 <div class="content">
   <div id="profile">
-    <img src="<%= @user.img %>" alt="" />
-    <p>@<a href="http://twitter.com/<%= @user.name %>"><%= @user.name %></a></p>
-    <p>UID: <%= @user.uid %></p>
+    <div class="id">
+      <img src="<%= @profile.img %>" alt="" />
+      <p>@<a href="http://twitter.com/<%= @profile.name %>" width="48"><%= @profile.name %></a></p>
+    </div>
+    <div class="collection">
+      <% if !@profile.gifs.nil? %>
+      <h3>@<%= @profile.name %>'s gif collection</h3>
+      <ul>
+        <% @profile.gifs.each_with_index do |gif, i| %>
+              <li id="gif_<%= i %>" class="user-gifs">
+                <a href="/g/<%= gif.short_url %>"><img src="<%= gif.location %>" width="150" /></a>
+              </li>
+            <% end %>
+      </ul>
+      <% else %>
+      <h3>no gifs here..</h3>
+      <% end %>
+    </div>
   </div>
 </div>

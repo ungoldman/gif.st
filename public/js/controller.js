@@ -23,7 +23,7 @@ $(function(){
     $('#sandbox').load('/' + $path + '?ajax=true', function() {
       
       var stateObj = { user: "<%= @user.name %>" };
-      history.pushState(stateObj, "gif.st | " + $path, $path);
+      history.pushState(stateObj, "gif.st | " + $path, '../' + $path);
       
       $('.nav.primary-links a').each(function(){
         $(this).parent().removeClass('active');
@@ -54,20 +54,15 @@ function Uploader() {
         '<h3>Gif Uploader</h3>' +
         '<a href="#" class="close">×</a>' +
       '</div>' +
+      '<form action="/gif/new" method="post" enctype="multipart/form-data">' +
       '<div class="modal-body">' +
         '<p>Select File to Upload...</p>' +
-        '<form action="/gif/new" method="post" enctype="multipart/form-data">' +
-          '<p>' +
-            '<label for="file">File:</label>' +
-            '<input type="file" name="file">' +
-          '</p>' +
-          '<p>' +
-            '<input name="commit" type="submit" value="Upload" />' +
-         ' </p>' +
-        '</form>' +
+        '<p>' +
+          '<input type="file" name="file">' +
+        '</p>' +
       '</div>' +
       '<div class="modal-footer">' +
-        '<a href="#" class="btn primary">Upload</a>' +
+        '<input name="commit" type="submit" class="btn primary" value="Upload" />' +
         '<a href="#" class="btn secondary">Cancel</a>' +
       '</div>' +
     '</div>' +
