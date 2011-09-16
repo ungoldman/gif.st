@@ -1,7 +1,8 @@
 class Gif
   include DataMapper::Resource
   
-  property :short_url,    String,    :key => true, :unique => true
+  property :id,           Serial
+  property :short_url,    String,    :unique => true
   property :filename,     String,    :length => 255
   
   belongs_to :user

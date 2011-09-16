@@ -7,7 +7,7 @@ class Controller < Sinatra::Base
   
   get '/?' do
     init_user
-    @gif = Gif.last
+    @gif = Gif.get(1+rand(Gif.count))
     if @gif
       erubis :gif
     else
@@ -60,10 +60,28 @@ class Controller < Sinatra::Base
   get '/latest/?' do
     init_user
     @gif = Gif.last
-    if params['ajax']
-      erubis :gif, :layout => false
+    if @gif
+      if params['ajax']
+        erubis :gif, :layout => false
+      else
+        erubis :gif
+      end
     else
-      erubis :gif
+      erubis :index
+    end
+  end
+  
+  get '/random/?' do
+    init_user
+    @gif = Gif.get(1+rand(Gif.count))
+    if @gif
+      if params['ajax']
+        erubis :gif, :layout => false
+      else
+        erubis :gif
+      end
+    else
+      erubis :index
     end
   end
   
@@ -133,7 +151,7 @@ class Controller < Sinatra::Base
   
   get '/g/:short_url/?' do
     init_user
-    @gif = Gif.get(params[:short_url])
+    @gif = Gif.first(:short_url => params[:short_url])
     if @gif
       erubis :gif
     else
@@ -142,7 +160,7 @@ class Controller < Sinatra::Base
   end
   
   get '/:short_url' do
-    @gif = Gif.get(params[:short_url])
+    @gif = Gif.first(:short_url => params[:short_url])
     if @gif
       '<img src="' + @gif.location + '" />'
     else

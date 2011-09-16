@@ -2,11 +2,11 @@
 <html lang="en-US">
   <head>
     <meta charset="UTF-8">
-    <title>gif.st | alpha</title>
+    <title>gif.st | beta</title>
     
-    <!--[if lte IE 7]>
+    <!--[if lte IE 8]>
       <script type="text/javascript">
-        var $buoop = {vs:{i:7}}
+        var $buoop = {vs:{i:8}}
         $buoop.ol = window.onload;
         window.onload=function() {
           if ($buoop.ol) $buoop.ol();
@@ -37,6 +37,7 @@
             
             <ul class="nav primary-links">
               <li><a href="/latest">latest</a></li>
+              <li><a href="/random">random</a></li>
               <li><a href="/profile">profile</a></li>
               <!--<li><a href="#">friends</a></li>-->
             </ul>
