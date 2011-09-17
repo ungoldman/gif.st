@@ -20,12 +20,14 @@ Completed:
 * Use Twitter Bootstrap for CSS boilerplate
 * Build UI
 * Connect to Amazon S3
+* Write Gif & User models
+* Write CRUD for Gifs
+* Implement Short URLs
 
 Next steps:
 -----------
 
-* Write Gif & User models
-* Write CRUD for Gifs
-* Implement Short URLs
 * Build rating & favorites system
+* Implement asymmetrical friending
+* Allow pasting URLs for gif upload
 * Allow posts to Twitter
