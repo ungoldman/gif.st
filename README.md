@@ -1,15 +1,17 @@
 gif.st - Social Web App meets Gifs
 ==================
-_because why not_
------------------
 
-Pre-Alpha Extreme Edition is using @kyledrake's [Sammy Davis Junior](https://github.com/kyledrake/sammy_davis_jr) as an MVC boilerplate.
+Back-end is using @kyledrake's [Sammy Davis Junior](https://github.com/kyledrake/sammy_davis_jr) as an MVC boilerplate.
 
-After experiencing some false starts when attempting to use the sinatra-twitter-oauth gem and not getting much farther with the plain twitter-oauth gem, I opted to borrow heavily from @mirven's [twitter oauth sinatra demo](https://github.com/mirven/twitter-oauth-sinatra) which uses the oauth and grackle gems for some basic login, authentication and status grabbing functionality.
+Using @mirven's [twitter oauth sinatra demo](https://github.com/mirven/twitter-oauth-sinatra) as a basis for twitter authentication, employing the oauth and grackle gems.
 
-This app is currently deployed on Heroku's cedar stack at [gif.herokuapp.com](http://gif.herokuapp.com) for maximum risk, instability and experimentation.
+Using Heroku's cedar stack at [gif.herokuapp.com](http://gif.herokuapp.com) for hosting.
 
-I'm also trying out Twitter's brand new [Bootstrap](http://twitter.github.com/bootstrap/) CSS UI kit (using LESS.js, no less).
+Using Twitter's brand new [Bootstrap](http://twitter.github.com/bootstrap/) for user interface development.
+
+Using Amazon S3 for file hosting.
+
+In other words, no dollars were spent in the making of this site.
 
 Completed:
 ----------
@@ -21,6 +23,7 @@ Completed:
 * Build UI
 * Connect to Amazon S3
 * Write Gif & User models
+* Create persistent users from OAuth user data
 * Write CRUD for Gifs
 * Implement Short URLs
 
